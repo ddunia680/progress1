@@ -1,6 +1,6 @@
 class Procurations {
     accessmodal = document.getElementById('add-modal');
-    newProcurationButton = document.querySelector('header button');
+    newProcurationButton = document.getElementById('newPorc');
     backdrop = document.getElementById('backdrop');
     cancelButtonOnModal = document.getElementById('cancelBtn');
 
@@ -75,7 +75,7 @@ class NewProcuration {
         const prodAv = new ProductsAvailability
         prodAv.injection(this.vaccineType.value);
         const iu = new IUManager();
-        iu.dealWithMargin();
+        // iu.dealWithMargin();
         const procu = new Procurations();
         procu.closeModal();
         procu.clearInputsInModal();
@@ -96,13 +96,13 @@ class NewProcuration {
 
 class IUManager {
     
-    dealWithMargin() {
-        const sectionUI = document.getElementById('quantity-levels');
-        let marginStartingValue = -80;
-        marginStartingValue = marginStartingValue -25;
-        let toBeAppended = marginStartingValue.toString() + 'px';
-        sectionUI.style.marginTop = toBeAppended;
-    }
+    // dealWithMargin() {
+    //     const sectionUI = document.getElementById('quantity-levels');
+    //     let marginStartingValue = -80;
+    //     marginStartingValue = marginStartingValue -25;
+    //     let toBeAppended = marginStartingValue.toString() + 'px';
+    //     sectionUI.style.marginTop = toBeAppended;
+    // }
 
     updateUinterface(vaccine) {
         this.vaccine = vaccine;

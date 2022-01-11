@@ -4,11 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <title>Medical Store</title>
     <link rel="stylesheet" href="assets/styles/app.css" />
     <script src="assets/scripts/app.js" defer></script>
   </head>
   <body>
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top navb">
+      <div class="container-fluid header" >
+        <h1 class="navbar-brand">Medical Store</h1>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+	        data-target="#navbarResponsive">
+		      <span class="navbar-toggler-icon"></span>
+	      </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <button class="navbar-nav ml-auto" id="newPorc">NEW PROCURATION</button>
+            
+        </div>
+      
+      </div>
+      </nav>
+
 <div>
     <div id="backdrop"></div>
     <div class="modal" id="add-modal">
@@ -30,34 +50,21 @@
         />
       </div>
       <div class="modal__actions">
-        <button class="btn btn--passive">Cancel</button>
+        <button class="btn btn--passive" id="cancelBtn">Cancel</button>
         <button class="btn btn--success" id="button-addVaccine">Add</button>
       </div>
     </div>
-    <div class="modal" id="delete-modal">
-      <h2 class="modal__title">Are you sure?</h2>
-      <p class="modal__content">
-        Are you sure you want to delete this item? This action can't be made
-        undone!
-      </p>
-      <div class="modal__actions">
-        <button class="btn btn--passive">No (Cancel)</button>
-        <button class="btn btn--danger">Yes</button>
-      </div>
-    </div>
-
-    <header>
-      <h1>Medical Store</h1>
-      <button>NEW PROCURATION</button>
-    </header>
-
+</div>
+<div class="container-fuild padding">
+<div class="row text-center padding">
+  <div class="col-lg-6">
     <main>
       <p id="entry-text">Vaccination Registry library</p>
       <ul id="movie-list"></ul>
     </main>
-</div>
-<div>
-    <section id="quantity-levels">
+  </div>
+<div class="col-lg-6">
+    <section id="quantity-levels" >
         <h1 id="figureTitle">Vaccines Consuption Progress</h1>
         <h2>AstraZeneca</h2>
         <progress id="astra" max="100" value="0">0%</progress>
@@ -68,6 +75,8 @@
         <h2>Johnson&Johnson</h2>
         <progress id="john" max="100" value="0">0%</progress>
     </section>
+</div>
+</div>
 </div>
   </body>
 </html>
