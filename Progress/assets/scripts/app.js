@@ -198,7 +198,6 @@ class ProductsAvailability {
     
 }
 
-
 class App {
     static init() {
         const proc = new Procurations();
