@@ -58,6 +58,15 @@ class NewProcuration {
         this.listOfVaccines.append(this.newVacData);            
     }
 
+    flashOnFooter() {
+        const footer = document.querySelector('footer');
+        footer.style.display = 'block';
+
+        setTimeout(() => {
+            footer.style.display = 'none';
+        }, 3000);
+    }
+
     AddVacData() {
         this.vaccineType.value;
         const coreDetail = this.vaccineDetails[0].value;
@@ -70,6 +79,7 @@ class NewProcuration {
             age: age,
         };
         this.VaccinationData(vacData.id, vacData.type, vacData.coreDetail, vacData.age);
+        this.flashOnFooter();
         this.vaccine.push(vacData);
         console.log(this.vaccine);
         const prodAv = new ProductsAvailability
@@ -210,6 +220,7 @@ class App {
 
 
 App.init();
+
 
 
 
