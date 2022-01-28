@@ -309,6 +309,27 @@ progress[value]::-moz-progress-bar {
   background-color: #179e7c;
 }
 
+#dropToDelete {
+  width: 50%;
+  height: 40px;
+  margin: auto;
+  /* border: solid; */
+  display: block;
+}
+
+.droppable {
+  background-color: #ffe0ec;
+}
+.blink {
+  color: white;
+  background-color: rgb(163, 59, 41);
+}
+
+
+/* .onDrag {
+  background: rgba(70, 68, 68, 0.75);
+} */
+
 .footer {
   display: none;
   text-align: center;

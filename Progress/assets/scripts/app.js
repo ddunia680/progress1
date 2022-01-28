@@ -32,6 +32,7 @@ class Procurations {
         this.newProcurationButton.addEventListener('click',this.makeModalAppear.bind(this));
         this.backdrop.addEventListener('click', this.closeModal.bind(this));
         this.cancelButtonOnModal.addEventListener('click', this.closeModal.bind(this));
+        // this.connectDroppable();
     }
 }
 
@@ -43,8 +44,12 @@ class NewProcuration {
     addButtonOnModal = document.getElementById('button-addVaccine');
     vaccine = [];
 
-    VaccinationData(id, type, coreDetail, age) {
+    VaccinationData(id, type, coreDetail, age, theId) {
+        this.id = theId;
         this.newVacData.className = 'movie-element';
+        this.newVacData.draggable = 'true';
+        this.newVacData.id = id;
+        // this.newVacData.id = 'injection-info';
         this.newVacData.innerHTML = `
             <div class = "movie-element__image">
                <h1>${type}</h1>
@@ -67,6 +72,52 @@ class NewProcuration {
         }, 3000);
     }
 
+    connectDrag() {
+        const elementToDrag = document.getElementById(this.id);
+        elementToDrag.addEventListener('dragstart', event => {
+            event.dataTransfer.setData('text/plain', this.id);
+            event.dataTransfer.effectAllowed = 'move';
+            console.log(this.id);
+        });
+        
+        elementToDrag.addEventListener('dragstart', event => {
+            const dropArea = document.getElementById('dropToDelete')
+            const popupMessage = document.createElement('p');
+            popupMessage.innerHTML = "drop here to delete the element";
+            dropArea.append(popupMessage);
+
+            setInterval(() => {
+                popupMessage.classList.toggle('blink');
+            }, 500);
+        })
+
+        elementToDrag.addEventListener('dragend', event => {
+            document.getElementById('dropToDelete').style.display = 'none';
+            console.log(event);
+        });
+    }
+    connectDroppable() {
+        // const idTouse = id;
+        const dropArea = document.getElementById('dropToDelete');
+
+        dropArea.addEventListener('dragenter', event => {
+            dropArea.classList.add('droppable');
+            // event.preventDefault();
+
+        });
+
+        dropArea.addEventListener('dragleave', event => {
+            dropArea.classList.remove('droppable');
+        });
+
+        dropArea.addEventListener('drop', event => {
+            this.removeVaccine(this.id);
+            event.preventDefault();
+        });
+    
+    }
+
+
     AddVacData() {
         this.vaccineType.value;
         const coreDetail = this.vaccineDetails[0].value;
@@ -78,7 +129,14 @@ class NewProcuration {
             coreDetail: coreDetail,
             age: age,
         };
-        this.VaccinationData(vacData.id, vacData.type, vacData.coreDetail, vacData.age);
+        const idToUse = vacData.id;
+        this.VaccinationData(
+            vacData.id,
+            vacData.type,
+            vacData.coreDetail,
+            vacData.age,
+            idToUse
+            );
         this.flashOnFooter();
         this.vaccine.push(vacData);
         console.log(this.vaccine);
@@ -91,6 +149,23 @@ class NewProcuration {
         procu.clearInputsInModal();
         iu.updateUinterface(this.vaccine);
         prodAv.checkForAvailability();
+        const dealWithEvents = new Procurations();
+        this.connectDrag();
+        this.connectDroppable();
+
+    }
+
+    removeVaccine(vacId) {
+        let vacIndex = 0;
+        for(const vac of this.vaccine){
+            if(this.vaccine.id === vacId){
+                break;
+            }
+            vacIndex++;
+        }
+        this.vaccine.splice(vacIndex, 1);
+        const list = document.getElementById('movie-list');
+        list.children[vacIndex].remove();
     }
 
 
@@ -100,6 +175,9 @@ class NewProcuration {
 
         let addButtonOnModal = document.getElementById('button-addVaccine');
         addButtonOnModal.addEventListener('click', this.AddVacData.bind(this));
+        // const dealWithEvents = new Procurations();
+        // dealWithEvents.connectDroppable(this.vacData);
+
     }
     
 }
