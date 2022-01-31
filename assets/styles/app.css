@@ -1,0 +1,157 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #222;
+}
+
+.welcome{
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+}
+.agents {
+  background-color: rgb(235, 227, 227);
+  width: 200px;;
+  height: 80px;
+  margin: 30px;
+  border-radius: 20px;
+  box-shadow:0 2px 8px rgba(12, 11, 11, 0.26);
+  float: left;
+  font-weight: 500;
+}
+.agents:hover {
+  background-color: rgb(105, 68, 68);
+}
+.names{
+  font-size: 20px;
+}
+
+.qualification {
+  background-color: rgb(68, 52, 52);
+  color: azure;
+  width: 190px;
+  margin: auto;
+  border-radius: 15px;
+}
+
+.team {
+  margin-top: 30px;
+  height: 100%;
+  border: 10px, white;
+}
+
+.fst {
+  background-color: rgb(202, 231, 229);
+  float: left;
+}
+.sec {
+  background-color: rgb(224, 196, 191);
+}
+.title {
+  font-size: 30px;
+}
+.topLeader{
+  height: 110px;
+  width: 160px;
+  background-color: tomato;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow:0 2px 8px rgba(12, 11, 11, 0.26);
+}
+
+.topLeader:hover {
+  font-size: 20px;
+  background-color: transparent;
+}
+
+.dataDiv {
+  height: 50px;
+  width: 150px;
+  margin: auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow:0 2px 8px rgba(12, 11, 11, 0.26);
+}
+
+.team-member{
+  float: left;
+  height: 80px;
+  width: 110px;
+  background-color: wheat;
+  margin: 20px;
+  box-shadow:0 2px 8px rgba(12, 11, 11, 0.26);
+  border-radius: 10px;
+}
+.team-member:hover {
+  background-color: rgba(225, 0, 0, 0.4);
+}
+.blink {
+  background: rgb(91, 91, 160) ;
+}
+
+
+
+
+/*---Media Queries --*/
+@media (max-width: 1200px) {
+  .agents {
+    width: 160px;
+    height: 60px;
+  }
+  .qualification {
+    size: 2px;
+    width: 150px;
+    font-size: 13px;
+  }
+  .names{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .agents {
+    width: 160px;
+    height: 60px;
+  }
+  .qualification {
+    size: 2px;
+    width: 150px;
+    font-size: 13px;
+  }
+  .names{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+.agents {
+  width: 160px;
+  height: 60px;
+}
+}
+
+@media (max-width: 576px) {
+
+}
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
