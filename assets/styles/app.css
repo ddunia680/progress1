@@ -13,7 +13,7 @@
     padding: 1rem;
     border-radius: 10px;
     /* box-shadow: [h-offset] [v-offset] [blur-radius] [spread-radius] [color]; */
-    box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.26);
+    box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.26);
     margin-top: 1rem;
     max-width: 650px;
     /* width: auto; */
@@ -73,6 +73,11 @@
   max-width: 90%;
   min-width: 20%;
   margin: 2rem;
+
+  padding: 1rem;
+    border-radius: 10px;
+    /* box-shadow: [h-offset] [v-offset] [blur-radius] [spread-radius] [color]; */
+    box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.26);
 }
 
 ul {
@@ -157,20 +162,37 @@ p {
 @media (max-width: 576px) {
     #h2 {
         font-size: 17px;
-        padding-top: off;
+        margin-top: 1rem;
     }
     .card{
-        width: 450px;
+        width: 335px;
     }
     .image-itm {
-        height: 200px;
-        height: 200px;
+        height: 150px;
+        height: 150px;
     }
     p {
         font-size: small;
+        margin: 1rem 1rem;
+        padding: 0rem;
+    }
+    
+    #user-input,
+    #filter {
+    margin-left: 2rem;
     }
 }
-  
+/* 
+@media (max-width: 407px) {
+    /* .card{
+        width: 100px;
+    } 
+    .image-itm{
+        height: 100px;
+        width: 100px;
+    }
+}
+   */
   
 
   
