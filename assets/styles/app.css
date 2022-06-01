@@ -26,11 +26,11 @@
   }
   button {
       font:inherit;
-      border: 1px solid rgb(224, 79, 103);
+      border: 1px solid #1a4ea1;
       color: white;
       padding: 1rem 2rem;
       border-radius: 5px;
-      background-color: rgb(224, 79, 103);
+      background-color: #1a4ea1;
       cursor: pointer;
       width: 30%;
       max-width: 40%;
@@ -41,8 +41,8 @@
   }
   button:hover,
   button:active {
-    background: #ff3482;
-    border-color: #ff3482;
+    background: #315692;
+    border-color: #1a4ea1;
   }
   label {
     font-weight: bold;
@@ -64,7 +64,7 @@
   /* focus just works like onclick even */
   input:focus {
       outline: none;
-      border-color: #ff0062;
+      border-color: #1a4ea1;
   }
 
 #user-input,
