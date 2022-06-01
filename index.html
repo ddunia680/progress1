@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>First Practice</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="assets/scripts/app.js" defer></script>
+        <link rel="stylesheet" href="assets/styles/app.css"/>
+    </head>
+
+    <body>
+        <div class="container-fuild padding">
+        <div class="row padding">
+            <div class="col-xl-6 col-lg-5">
+                <div id='user-input' class='card'>
+                    <div class="control">
+                        <label for="title">Favorite Movie</label>
+                        <input type="text" id="title">
+                    </div>
+                    <div class="inline-controls">
+                        <div class="control col-xl-4">
+                            <label for="extra-name">Extra Information (Name)</label>
+                            <input type="text" id="extra-name"/>
+                        </div>
+                        <div class="control col-xl-4 ">
+                            <label for="extra-value">Extra Information (Value)</label>
+                            <input type="text" id="extra-value"/>
+                        </div>
+                    </div>
+                    <button id="add-movie-button">Add Movie</button>
+                </div>
+                <div id="filter" class="card">
+                    <label for="filter-title">Filter by Title</label>
+                    <input type="text" id="filter-title" />
+                    <button id="search-btn">Search</button>
+                </div>
+
+            </div>
+            <div class="col-xl-6 col-lg-5">
+                <ul id="movie-list"></ul>
+            </div>
+        </div>
+        </div>
+
+    </body>
+</html>
