@@ -1,0 +1,5 @@
+this is a practice of Http requests
+
+here data get pulled from the server when the project loads and it's titles are displayed in the pannel at the left in the GUI. When the button (expand) next to a title is clicked,full details about that data item are displayed in the the container in the right side.
+
+When the delete button in that container is clicked, this data gets deleted in the server.
