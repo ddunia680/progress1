@@ -70,12 +70,15 @@
     overflow: hidden;
 }
 .expanded {
-    /* display: none; */
+    display: none;
     box-shadow: 0 2px 30px 20px rgba(0, 0, 0, 0.26);
     margin: 30px;
     border-radius: 10px;
     background-color: rgb(234, 202, 231);
     margin-top: 5rem;
+}
+.visible {
+    display: block;
 }
 #title-expanded {
     text-align: center;

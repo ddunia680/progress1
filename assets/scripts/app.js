@@ -1,8 +1,8 @@
 const list = document.querySelector('.list');
 let mainDiv = document.getElementsByClassName('row padding');
-let expandDiv = document.getElementsByClassName('expanded');
-let titleInExpanded = document.getElementById('title-expanded');
-let bodyExpanded = document.getElementById('body-div');
+const expandDiv = document.getElementsByClassName('expanded');
+const titleInExpanded = document.getElementsByClassName('expand');
+const bodyExpanded = document.getElementById('body-div');
 // const postTemplate = document.querySelector('#templ');
 console.log(bodyExpanded);
 
@@ -59,9 +59,16 @@ function expandPost() {
             const postId = postElement.id;
             const postTitle = postElement.title;
             const postBody = postElement.body;
-            
+            expandReal(postTitle, postBody);
         }
     });
+}
+
+function expandReal(title, body) {
+    expandDiv.classList.add('visible');
+    // console.log(expandDiv.classList);
+    titleInExpanded.innerHTML = title;
+    bodyExpanded.innerHTML = body;  
 }
 
 fetchPosts();
