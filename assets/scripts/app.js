@@ -1,7 +1,10 @@
 const list = document.querySelector('.list');
 let mainDiv = document.getElementsByClassName('row padding');
+let expandDiv = document.getElementsByClassName('expanded');
+let titleInExpanded = document.getElementById('title-expanded');
+let bodyExpanded = document.getElementById('body-div');
 // const postTemplate = document.querySelector('#templ');
-console.log(mainDiv);
+console.log(bodyExpanded);
 
 function sendHttpRequest(method, url) {
     return fetch(url, {
@@ -56,24 +59,7 @@ function expandPost() {
             const postId = postElement.id;
             const postTitle = postElement.title;
             const postBody = postElement.body;
-            const expandedEl = document.createElement('div');
-            expandedEl.className = 'expanded col-xl-6';
-            expandedEl.innerHTML =
-            `
-                    <div id="title-expanded">${postTitle}</div>
-                    <div id="design">
-                        <div class="el one"></div> 
-                        <div class="el two"></div> 
-                        <div class="el three"></div>
-                    </div>
-                    <div id="body-div">
-                        <p>${postBody}</p>
-                    </div>
-                    <div id="div-delete">
-                        <button id="deleteData">Delete</button>
-                    </div>
-            `;
-            mainDiv.innerHTML += expandedEl.innerHTML;
+            
         }
     });
 }

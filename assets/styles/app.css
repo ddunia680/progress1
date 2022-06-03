@@ -70,6 +70,7 @@
     overflow: hidden;
 }
 .expanded {
+    /* display: none; */
     box-shadow: 0 2px 30px 20px rgba(0, 0, 0, 0.26);
     margin: 30px;
     border-radius: 10px;
