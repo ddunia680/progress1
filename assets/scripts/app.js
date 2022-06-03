@@ -1,10 +1,8 @@
 const list = document.querySelector('.list');
 let mainDiv = document.getElementsByClassName('row padding');
 const expandDiv = document.getElementsByClassName('expanded');
-const titleInExpanded = document.getElementsByClassName('expand');
 const bodyExpanded = document.getElementById('body-div');
 // const postTemplate = document.querySelector('#templ');
-console.log(bodyExpanded);
 
 function sendHttpRequest(method, url) {
     return fetch(url, {
@@ -57,19 +55,44 @@ function expandPost() {
         if(event.target.tagName === 'BUTTON'){
             const postElement = event.target.closest('li');
             const postId = postElement.id;
-            const postTitle = postElement.title;
             const postBody = postElement.body;
-            expandReal(postTitle, postBody);
+            bodyExpanded.innerHTML = postBody;
+            transitionFunction(postId);
         }
+        
     });
 }
 
-function expandReal(title, body) {
-    expandDiv.classList.add('visible');
-    // console.log(expandDiv.classList);
-    titleInExpanded.innerHTML = title;
-    bodyExpanded.innerHTML = body;  
+function transitionFunction(id) {
+    const deleteBtn = document.getElementById('deleteData');
+    deleteBtn.addEventListener('click', deletePost.bind(null, id));
 }
+
+async function deletePost(id) {
+    try{
+        const responseData = await sendHttpRequest(
+            'DELETE',
+            `https://jsonplaceholder.typicode.com/posts/${id}`
+        );
+        alert('Data Deleted from the server');
+    } catch(error) {
+        console.log(error.message);
+    }
+}
+// async function deletePost(id) {
+//     deleteBtn.addEventListener('click', event => {
+//         try{
+//         const responseData = await sendHttpRequest(
+//             'DELETE',
+//             `https://jsonplaceholder.typicode.com/posts/${id}`
+//         );
+//         alert('Data Deleted from the server');
+//     } catch(error) {
+//         console.log(error.message);
+//     }
+//     });
+    
+// }
 
 fetchPosts();
 expandPost();
