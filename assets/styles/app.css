@@ -121,10 +121,9 @@
     border-radius: 10px;
     color: rgb(179, 130, 174);
     margin-top: 40px;
-}
-#body-div p{
     padding: 1rem;
 }
+
 #div-delete {
     display: flex;
     align-items: center;
@@ -202,7 +201,7 @@
         /* margin: 30px; */
         border-radius: 5px;
         /* background-color: rgb(234, 202, 231); */
-        width: 300px;
+        width: 380px;
         height: 350px;
     }
     #title-expanded {
