@@ -4,32 +4,31 @@ const expandDiv = document.getElementsByClassName('expanded');
 const bodyExpanded = document.getElementById('body-div');
 // const postTemplate = document.querySelector('#templ');
 
-function sendHttpRequest(method, url) {
-    return fetch(url, {
-        method:method
-    }).then(response => {
-        if(response.status >= 200 && response.status <= 300) {
-            return response.json();
-        } else {
-            return response.json().then(err => {
-                console.log(err);
-                throw new Error('Something went wrong - server side');
-            });
-        }
-    }).catch(error => {
-        console.log(error);
-        throw new Error('Something went wrong...')
-    });
-}
+// function sendHttpRequest(method, url) {
+//     return fetch(url, {
+//         method:method
+//     }).then(response => {
+//         if(response.status >= 200 && response.status <= 300) {
+//             return response.json();
+//         } else {
+//             return response.json().then(err => {
+//                 console.log(err);
+//                 throw new Error('Something went wrong - server side');
+//             });
+//         }
+//     }).catch(error => {
+//         console.log(error);
+//         throw new Error('Something went wrong...')
+//     });
+// }
 
 async function fetchPosts() {
     try {
-        const responseData = await sendHttpRequest(
-            'GET',
+        const response = await axios.get(
             'https://jsonplaceholder.typicode.com/posts'
         );
 
-        const listOfPosts = responseData;
+        const listOfPosts = response.data;
 
         for(const post of listOfPosts) {
             const postEl = document.createElement('li');
@@ -70,8 +69,7 @@ function transitionFunction(id) {
 
 async function deletePost(id) {
     try{
-        const responseData = await sendHttpRequest(
-            'DELETE',
+        const responseData = await axios.delete(
             `https://jsonplaceholder.typicode.com/posts/${id}`
         );
         alert('Data Deleted from the server');
